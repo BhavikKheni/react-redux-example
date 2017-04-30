@@ -5,7 +5,7 @@ import * as action from '../actions/actions';
 
 import userImage from '../../public/images.jpg';
 import classNames from 'classnames';
-import { Button, Form, List, Image, Card, Segment } from 'semantic-ui-react';
+import { Button, Form, List, Image, Card } from 'semantic-ui-react';
 import 'semantic-ui-css/semantic.min.css';
 
 function validate(values) {
@@ -41,10 +41,7 @@ export class ContactForm extends Component {
     onChange(e) {
         this.setState({ value: e.target.value });
     }
-    handleOnSave = (event) => {
-        event.preventDefault();
-        this.submitButton.click();
-    }
+   
     onSave = (value) => {
         this.props.onSaveData(value);
     }
@@ -93,7 +90,7 @@ export class ContactForm extends Component {
                                     </div>
                                     <div>
                                         <div>
-                                            <Button basic color='blue' id="submitButton" type="submit" ref={(c) => { this.submitButton = c; }}>Submit</Button>
+                                            <Button basic color='blue' id="button" type="submit" ref={(c) => { this.submitButton = c; }}>Submit</Button>
                                         </div>
                                     </div>
                                 </Form>
