@@ -50,7 +50,7 @@ export class ContactForm extends Component {
         <div className={classNames('form-group', { 'has-error': touched && error })}>
             <Form.Field>
                 <label>{placeholder}</label>
-                <input  {...input} id={input.name} value={value} onChange={(e) => this.onChange(e)} style={{ color: '#0088cc', fontSize: 12 }} />
+                <input  {...input} id={input.name} value={value} placeholder={placeholder} onChange={(e) => this.onChange(e)} style={{ color: '#0088cc', fontSize: 12 }} />
                 {touched && error && <span className="help-block">{error}</span>}
             </Form.Field>
         </div>
@@ -105,8 +105,8 @@ export class ContactForm extends Component {
                                     <List.Item key={i} >
                                         <Image avatar src={userImage} />
                                         <List.Content>
-                                            <List.Header as='a' style={{ color: 'white' }}>{user.user.firstName} &nbsp; {user.user.lastName}</List.Header>
-                                            <List.Description>My Email is: <a><b>{user.user.email}</b></a></List.Description>
+                                            <List.Header as='a' style={{ color: 'white' }} className="firstName">{user.user.firstName} &nbsp; {user.user.lastName}</List.Header>
+                                            <List.Description>My Email is: <a><b className="Email">{user.user.email}</b></a></List.Description>
                                         </List.Content>
                                     </List.Item>
                                 ))
